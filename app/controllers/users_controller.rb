@@ -21,6 +21,7 @@ class UsersController < ApplicationController
                                  :login,
                                  :avatar_url,
                                  :html_url,
-                                 :description)
+                                 :description, 
+                                 :activated)
   end
 end
