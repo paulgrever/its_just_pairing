@@ -50,7 +50,7 @@
         null,
         null,
         1,
-        5,
+        8,
         null,
         null,
         1,
@@ -58,11 +58,11 @@
         null,
         null,
         1,
-        5,
+        8,
         null,
         null,
         1,
-        5,
+        8,
         null,
         null,
         null
@@ -315,17 +315,55 @@
         null,
         null
       ],
+      "/Users/paulgrever/Documents/rails_lessons/projects/its_just_pairing/spec/models/language_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        2,
+        null,
+        null,
+        null,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/paulgrever/Documents/rails_lessons/projects/its_just_pairing/app/models/language.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/paulgrever/Documents/rails_lessons/projects/its_just_pairing/spec/models/user_spec.rb": [
         1,
         null,
         1,
         1,
+        2,
+        null,
+        null,
+        null,
+        2,
+        2,
+        null,
+        null,
+        1,
         1,
         null,
         null,
-        null,
-        null,
-        null,
+        1,
         1,
         1,
         null,
@@ -346,6 +384,22 @@
         1,
         5,
         null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/paulgrever/Documents/rails_lessons/projects/its_just_pairing/spec/models/userlanguage_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/paulgrever/Documents/rails_lessons/projects/its_just_pairing/app/models/userlanguage.rb": [
+        1,
+        1,
+        1,
         null
       ],
       "/Users/paulgrever/Documents/rails_lessons/projects/its_just_pairing/app/controllers/home_controller.rb": [
@@ -411,6 +465,6 @@
         null
       ]
     },
-    "timestamp": 1435096329
+    "timestamp": 1435097332
   }
 }

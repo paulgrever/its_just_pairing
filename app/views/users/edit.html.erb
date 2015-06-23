@@ -1,14 +1,25 @@
 <div class="container">
   <div class="row center-align">
-    <h2>Please complete your pairing profile <%=@user.login  %> </h2>
+    <h2>Please complete your pairing profile <%=@user.login %> </h2>
   </div>
 
   <div>
-    <%= form_for(@user) do |f| %>
-      <%=f.text_area :description, id:"description", class:"materialize-textarea", placeholder:"Your Description"    %>
+     <%= form_for(@user) do |f| %>
+     <div class="row">
+       <% Language.all.each do |language| %>
+        <div class="col s4">
+          <p>
+            <input type="checkbox" id="<%= language.name %>" name="language[<%= language.name %>]" />
+            <label for=<%= language.name %>><%= language.name %></label>
+          </p>
+        </div>
+      <% end %>
+    </div>
+      <%=f.text_area :description, id:"description", placeholder:"Your Description", class:"materialize-textarea" %>
       <%= f.hidden_field :activated, value: true %>
+      
       <%= f.submit "Complete Profile", class:"btn-large amber" %>
     <% end %>
-      
   </div>
 </div>
+

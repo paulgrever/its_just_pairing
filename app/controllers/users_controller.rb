@@ -6,8 +6,10 @@ class UsersController < ApplicationController
   end
 
   def update
+
     @user = User.find(params[:id])
     if @user.update(user_params)
+      @user.languages 
       redirect_to users_path
     else
       render :edit
