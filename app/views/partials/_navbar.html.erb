@@ -3,6 +3,7 @@
       <a href="#" class="brand-logo">It's Just Pairing</a>
       <ul id="nav-mobile" class="right">
         <% if current_user %>
+           <li>Logged in as: <%= current_user.login %></li>
           <li><%= link_to("Logout", "/logout", method: :DELETE) %></li>
         <% else %>
             <li><%= link_to("Login", "/auth/github") %></li>
@@ -10,3 +11,4 @@
       </ul>
     </div>
   </nav>
+

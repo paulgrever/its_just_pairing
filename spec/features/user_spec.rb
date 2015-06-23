@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe User, type: :model do
+RSpec.describe "User", type: :feature do
   before(:each ) do 
     @user = User.create(uid: "1234",
                         login: "testuser",
@@ -8,8 +8,12 @@ RSpec.describe User, type: :model do
                         html_url: "https://github.com/paulgrever")
   end
 
-  it "is not activated initially" do
-    expect(@user.activated).to eq(false)
+  it "is taken to edit, if not activated" do
+    github_login
+    visit root_path
+    binding.pry
+    click_link_or_button("Login")
+    expect(current_path).to eq(edit_user_path(@user))
   end
-  
+
 end

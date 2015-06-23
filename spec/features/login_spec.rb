@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "User", type: :feature do
+RSpec.describe "User Login", type: :feature do
   it "can be created" do
     github_login
     visit root_path
@@ -18,6 +18,6 @@ RSpec.describe "User", type: :feature do
     click_link_or_button("Login with Github")
     expect(page).to have_content("Logout")
     click_link_or_button("Logout")
-    expect(page).to have_content("Login with Github")
+    expect(page).to have_content("Login")
   end
 end
