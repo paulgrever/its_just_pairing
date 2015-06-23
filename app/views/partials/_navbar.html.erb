@@ -1,0 +1,12 @@
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">It's Just Pairing</a>
+      <ul id="nav-mobile" class="right">
+        <% if current_user %>
+          <li><%= link_to("Logout", "/logout", method: :DELETE) %></li>
+        <% else %>
+            <li><%= link_to("Login", "/auth/github") %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>

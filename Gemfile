@@ -24,7 +24,8 @@ gem 'rspec-rails'
 gem "figaro"
 gem "omniauth-github"
 gem 'bcrypt', '~> 3.1.7'
-gem 'bootstrap-sass'
+gem 'materialize-sass'
+gem "selenium-webdriver"
 
 group :development, :test do
   gem "better_errors"
@@ -34,5 +35,9 @@ group :development, :test do
   gem "capybara"
   gem "launchy"
   gem "pry"
+end
+
+group :test do
+  gem "database_cleaner" 
 end
 
