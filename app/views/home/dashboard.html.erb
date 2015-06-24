@@ -4,6 +4,6 @@
   </div>
 
   <div class="row center-align">
-    <%= link_to("Find Pairs", user_path(User.first.id), class: "waves-effect waves-light btn btn-large") %>
+    <%= link_to("Find Pairs", user_path(current_user.next_match), class: "waves-effect waves-light btn btn-large") %>
   </div>
 </div>

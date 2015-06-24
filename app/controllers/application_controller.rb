@@ -5,14 +5,9 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include LanguagesHelper
   include MatchesHelper
+  helper_method :next_match
 
-#   before_filter :require_login
-
-# private
-
-#   def require_login
-#     unless current_user
-#       redirect_to home_index_path
-#     end
-#   end
+  def next_match
+    @next_match ||= session[:next_match]
+  end
 end

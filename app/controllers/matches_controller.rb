@@ -8,6 +8,7 @@ class MatchesController < ApplicationController
     @match = current_user.matches.create(person_a: people[0], 
                        person_b: people[1], 
                        status: params[:status])
-    redirect_to matches_path
+    session[:next_match] += 1
+    redirect_to user_path(session[:next_match])
   end
 end
