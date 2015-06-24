@@ -22,35 +22,53 @@ RSpec.describe "Matches", type: :feature do
     github_login
     visit root_path
     click_link_or_button("Login")
-  end
-
-  it "can see potential matches" do
     User.last.update(next_match: @user.id)
     visit dashboard_path
     click_link_or_button("Find Pairs")
+
+  end
+
+  it "can see potential matches" do
     expect(page).to have_content("testuser")
     expect(page).to have_content("This is the description")
   end
 
   it "can approve of matches" do
     expect(User.last.matches.count).to eq(0)
-    User.last.update(next_match: @user.id)
-    visit dashboard_path
-    click_link_or_button("Find Pairs")
-    expect(page).to have_content("testuser")
-    expect(page).to have_content("This is the description")
     click_link_or_button("Approve")
     expect(User.last.matches.first.status).to eq("Pending")
   end
 
   it "can reject of matches" do
-    expect(User.last.matches.count).to eq(0)
-    User.last.update(next_match: @user.id)
-    visit dashboard_path
-    click_link_or_button("Find Pairs")
-    expect(page).to have_content("testuser")
-    expect(page).to have_content("This is the description")
     click_link_or_button("Reject")
     expect(User.last.matches.first.status).to eq("Reject")
+  end
+
+  it "it can make a match" do
+    Match.create(person_a: @user2.id,
+                 person_b: User.last.id,
+                 status: 2,
+                 user_id: @user2.id)
+    visit dashboard_path
+    click_link_or_button("Find Pairs")
+    expect(page).to have_content("testuser2")
+    click_link_or_button("Approve")
+    expect(page).to have_content("Congrats")
+    visit dashboard_path
+    expect(page).to have_content("testuser2")
+  end
+
+  it "rejects don't show on match page" do
+    Match.create(person_a: @user2.id,
+                 person_b: User.last.id,
+                 status: 2,
+                 user_id: @user2.id)
+    visit dashboard_path
+    click_link_or_button("Find Pairs")
+    expect(page).to have_content("testuser2")
+    click_link_or_button("Reject")
+    expect(page).to_not have_content("Congrats")
+    visit dashboard_path
+    expect(page).to_not have_content("testuser2")
   end
 end
