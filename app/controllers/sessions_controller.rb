@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     @user = User.find_or_create_by_auth(req)
     session[:user_id] = @user.id
     if @user.activated?
-      redirect_to users_path
+      redirect_to dashboard_path
     else
       redirect_to edit_user_path(@user)
     end

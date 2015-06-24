@@ -2,7 +2,6 @@ require "rails_helper"
 
 RSpec.describe "User", type: :feature do
 
-
   it "is taken to edit, if not activated" do
     github_login
     visit root_path
@@ -18,7 +17,7 @@ RSpec.describe "User", type: :feature do
     click_link_or_button("Complete Profile")
     click_link_or_button("Logout")
     click_link_or_button("Login")
-    expect(current_path).to eq(users_path)
+    expect(current_path).to eq(dashboard_path)
   end
   context "with languages" do 
     before(:each) do 

@@ -14,5 +14,6 @@ class User < ActiveRecord::Base
 
   has_many :userlanguages
   has_many :languages, through: :userlanguages
+  has_many :matches
   validates :description, length: { maximum: 500 }
 end

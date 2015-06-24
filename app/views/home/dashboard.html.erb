@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <h1>Welcome to your dashboard <%= current_user.login %> </h1>
+  </div>
+
+  <div class="row center-align">
+    <%= link_to("Find Pairs", user_path(User.first.id), class: "waves-effect waves-light btn btn-large") %>
+  </div>
+</div>

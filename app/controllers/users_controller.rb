@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
-  def index
+
+  def show
+    @user = User.find(params[:id])
   end
+
   def edit
     @user = User.find(params[:id])
   end
@@ -9,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       language_update
-      redirect_to users_path
+      redirect_to dashboard_path
     else
       render :edit
     end
