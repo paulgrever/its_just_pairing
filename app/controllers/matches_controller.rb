@@ -20,6 +20,12 @@ class MatchesController < ApplicationController
                                          status: params[:status])
       session[:next_match] += 1
     end
-    redirect_to user_path(change_up)
+    redirect_to user_path(next_potential_match)
+  end
+
+  private
+  
+  def pending_matches
+    Match.pending.where(person_b: current_user).count > 0
   end
 end

@@ -2601,6 +2601,10 @@ class Seed
                  person_b: 83,
                  status: 2, 
                  user_id: 45)
+    Match.create(person_a: 57, 
+                 person_b: 83,
+                 status: 2, 
+                 user_id: 57)
   end
 end
 

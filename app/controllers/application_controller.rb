@@ -6,19 +6,15 @@ class ApplicationController < ActionController::Base
   include LanguagesHelper
   include MatchesHelper
   before_filter :require_login
-  helper_method :change_up, :pending_matches, :list_of_likes
+  helper_method :next_potential_match, :pending_matches, :list_of_likes
   attr_reader :liked
 
-  def change_up
+  def next_potential_match
     @liked ||= Match.pending.where(person_b: current_user)
     if @liked.count > 0
       @liked.first.person_a.to_i
     else
-      if session[:next_match] > current_user.next_match 
-        session[:next_match]
-      else
-        session[:next_match] = current_user.next_match 
-      end
+      upcoming_match
     end
   end
 
@@ -26,11 +22,17 @@ class ApplicationController < ActionController::Base
     Match.pending.where(person_b: current_user)
   end
 
-  def pending_matches
-    Match.pending.where(person_b: current_user).count > 0
-  end
+
 
 private
+
+  def upcoming_match
+    if session[:next_match] > current_user.next_match 
+      session[:next_match]
+    else
+      session[:next_match] = current_user.next_match 
+    end
+  end
 
   def require_login
     unless current_user
