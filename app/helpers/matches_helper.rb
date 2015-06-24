@@ -6,4 +6,8 @@ module MatchesHelper
       [current_user, pot_match]
     end
   end
+
+  def potential_match
+    session[:next_match] unless Match
+  end
 end

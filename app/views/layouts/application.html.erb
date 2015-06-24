@@ -12,6 +12,11 @@
   <div class="navbar">
     <%= render "partials/navbar" %>
   </div>
+  <div class="center-align  blue lighten-3">
+    <% flash.each do |name, msg| %>
+      <h2><%= content_tag :div, msg, class: "alert alert-#{name} text-center" %></h2>
+    <% end %>
+  </div>
   <div class="main-body">
     <%= yield %>
   </div>

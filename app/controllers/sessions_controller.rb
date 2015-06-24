@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
     req = request.env["omniauth.auth"]
     @user = User.find_or_create_by_auth(req)
     session[:user_id] = @user.id
+    binding.pry
     session[:next_match] = @user.next_match
     if @user.activated?
       redirect_to dashboard_path
@@ -14,7 +15,6 @@ class SessionsController < ApplicationController
   def destroy
     @user = User.find(current_user.id)
     @user.update(next_match: session[:next_match])
-    session[:next_match] = nil
     session[:user_id] = nil
     redirect_to root_path
   end
