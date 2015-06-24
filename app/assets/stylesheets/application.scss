@@ -1,3 +1,7 @@
 @import "materialize/components/color";
 $primary-color: color("red", "lighten-2") !default;
 @import 'materialize';
+
+body {
+  background-color: #f5f5f5;
+}

@@ -4,4 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
   include LanguagesHelper
+  include MatchesHelper
+  helper_method :next_match
+
+  def next_match
+    @next_match ||= session[:next_match]
+  end
 end
