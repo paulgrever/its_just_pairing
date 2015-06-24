@@ -232,6 +232,7 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.0)
   jquery-rails
+  json
   launchy
   materialize-sass
   omniauth-github
