@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   skip_before_filter :require_login, except: [:dashboard]
+  skip_before_filter :out_of_matches
+  
   def index
   end
 
@@ -11,7 +13,7 @@ class HomeController < ApplicationController
   private
 
   def match_locater
-    @matches.map do |match| 
+    @matches.map do |match|
       if current_user == match.user
         User.find(match.person_b.to_i)
       else

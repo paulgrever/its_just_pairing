@@ -25,10 +25,10 @@ RSpec.describe "Matches", type: :feature do
     User.last.update(next_match: @user.id)
     visit dashboard_path
     click_link_or_button("Find Pairs")
-
   end
 
   it "can see potential matches" do
+
     expect(page).to have_content("testuser")
     expect(page).to have_content("This is the description")
   end
@@ -70,5 +70,26 @@ RSpec.describe "Matches", type: :feature do
     expect(page).to_not have_content("Congrats")
     visit dashboard_path
     expect(page).to_not have_content("testuser2")
+  end
+
+  it "will redirect to no more matches page if out of potential matches" do
+    expect(page).to have_content("testuser")
+    click_link_or_button("Approve")
+    expect(page).to have_content("testuser2")
+    click_link_or_button("Approve")
+    expect(current_path).to eq(matches_path)
+    expect(page).to have_content("Sorry there are no more potential matches at this time.")
+  end
+
+  it "will never match withitself" do
+    name = User.last.login
+    within(".main-body") do 
+      expect(page).to_not have_content(name)
+      click_link_or_button("Approve")
+      expect(page).to_not have_content(name)
+      click_link_or_button("Approve")
+      expect(page).to_not have_content(name)
+    end
+
   end
 end

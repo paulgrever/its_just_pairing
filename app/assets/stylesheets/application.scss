@@ -9,3 +9,19 @@ body {
 .image-size {
   // width: 300px !important;
 }
+
+.hero-unit {
+  margin-top: -35px;
+  background-image: image-url("pairing.png");
+  background-size: cover;
+  height: 100vh;
+}
+
+.middle {
+  padding-top: 30vh;
+}
+
+.navbar {
+  padding-bottom: 30px;
+  z-index: 3;
+}

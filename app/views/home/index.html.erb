@@ -1,13 +1,16 @@
-<div class="container-fluid">
-  <div class="row">
-    <h1 class="center-align">It's Just Pairing</h1>
-  </div>
-  <div class="center-align" >
-    <% if current_user %>
-      <%= link_to("Logout of Github", "/logout", method: :DELETE, class:"btn btn-lg btn-danger")%>
-    <% else %>
-      <%= link_to("Login with Github", "/auth/github",  class:"btn btn-lg btn-primary")%>
-    <% end %>
-    
+<div class="container-fluid hero-unit">
+  <div class="middle">
+    <div class="row">
+      <h1 class="center-align white-text">It's Just Pairing</h1>
+    </div>
+    <div class="center-align" >
+      <% if current_user %>
+        <%= link_to("Logout of Github", "/logout", method: :DELETE, class:"btn btn-lg btn-danger")%>
+      <% else %>
+        <%= link_to("Login with Github", "/auth/github",  class:"btn btn-large btn-primary")%>
+      <% end %>
+      
+    </div>
   </div>
 </div>
+

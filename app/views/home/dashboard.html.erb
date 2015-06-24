@@ -1,10 +1,11 @@
 <div class="container">
   <div class="row">
+    <div></div>
     <h1>Welcome to your dashboard <%= current_user.login %> </h1>
   </div>
 
   <div class="row center-align">
-    <%= link_to("Find Pairs", user_path(change_up), class: "waves-effect waves-light btn btn-large") %>
+    <%= link_to("Find Pairs", user_path(next_potential_match), class: "waves-effect waves-light btn btn-large") %>
   </div>
   </div>
 <div class="container center-align">
@@ -15,7 +16,6 @@
         <div class="card">
           <div class="card-image">
             <%= image_tag(user.avatar_url, class:"image-size") %>
-            
             <span class="card-title"><%=user.login %></span>
           </div>
           <div class="card-content">
