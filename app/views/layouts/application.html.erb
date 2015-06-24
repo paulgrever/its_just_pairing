@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>ItsJustPairing</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -12,7 +12,7 @@
   <div class="navbar">
     <%= render "partials/navbar" %>
   </div>
-  <div class="center-align  blue lighten-3">
+  <div class="center-align blue lighten-3">
     <% flash.each do |name, msg| %>
       <h2><%= content_tag :div, msg, class: "alert alert-#{name} text-center" %></h2>
     <% end %>

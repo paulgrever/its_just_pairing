@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  before(:each ) do 
+  before(:each ) do
     @user = User.create(uid: "1234",
                         login: "testuser",
                         avatar_url: "http://www.bluestemprairie.com/.a/6a00d834516a0869e2016760f339c3970b-800wi",
@@ -23,5 +23,4 @@ RSpec.describe User, type: :model do
     user = User.new(description: (1..501).to_a.join)
     expect(user).to_not be_valid
   end
-
 end

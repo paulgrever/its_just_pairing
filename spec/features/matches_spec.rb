@@ -1,17 +1,17 @@
 require "rails_helper"
 
 RSpec.describe "Matches", type: :feature do
-  before(:each) do 
+  before(:each) do
     @user = User.create(uid: "12345",
                         login: "testuser",
                         avatar_url: "http://www.bluestemprairie.com/.a/6a00d834516a0869e2016760f339c3970b-800wi",
-                        html_url: "https://github.com/paulgrever", 
+                        html_url: "https://github.com/paulgrever",
                         description: "This is the description",
                         next_match: 1)
     @user2 = User.create(uid: "12346",
                         login: "testuser2",
                         avatar_url: "http://www.bluestemprairie.com/.a/6a00d834516a0869e2016760f339c3970b-800wi",
-                        html_url: "https://github.com/paulgrever", 
+                        html_url: "https://github.com/paulgrever",
                         description: "This is the description",
                         next_match: 1)
     @user.languages.create(name: "Ruby")
@@ -83,13 +83,12 @@ RSpec.describe "Matches", type: :feature do
 
   it "will never match withitself" do
     name = User.last.login
-    within(".main-body") do 
+    within(".main-body") do
       expect(page).to_not have_content(name)
       click_link_or_button("Approve")
       expect(page).to_not have_content(name)
       click_link_or_button("Approve")
       expect(page).to_not have_content(name)
     end
-
   end
 end

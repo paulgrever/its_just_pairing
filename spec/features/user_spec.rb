@@ -19,8 +19,8 @@ RSpec.describe "User", type: :feature do
     click_link_or_button("Login")
     expect(current_path).to eq(dashboard_path)
   end
-  context "with languages" do 
-    before(:each) do 
+  context "with languages" do
+    before(:each) do
       Language.create(name: "Ruby")
       Language.create(name: "JavaScript")
     end

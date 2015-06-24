@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Language, type: :model do
-  before(:each) do 
+  before(:each) do
     @language = Language.create(name: "Ruby")
     @language.users.create(uid: "1234",
                           login: "testuser",

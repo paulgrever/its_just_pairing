@@ -14,7 +14,7 @@
         </div>
       <% end %>
     </div>
-      <%=f.text_area :description, id:"description", placeholder:"Your Description", class:"materialize-textarea" %>
+      <%=f.text_area :description, id:"description", placeholder:"Your Description", class:"materialize-textarea", length:"500" %>
       <%= f.hidden_field :activated, value: true %>
       <%= f.submit "Complete Profile", class:"btn-large amber" %>
     <% end %>
