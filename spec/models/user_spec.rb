@@ -19,4 +19,9 @@ RSpec.describe User, type: :model do
     expect(@user.languages.last.name).to eq("JavaScript")
   end
 
+  it "cannot have a description longer than 500 characters" do
+    user = User.new(description: (1..501).to_a.join)
+    expect(user).to_not be_valid
+  end
+
 end

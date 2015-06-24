@@ -2,7 +2,6 @@
   <div class="row center-align">
     <h2>Please complete your pairing profile <%=@user.login %> </h2>
   </div>
-
   <div>
      <%= form_for(@user) do |f| %>
      <div class="row">
@@ -17,7 +16,6 @@
     </div>
       <%=f.text_area :description, id:"description", placeholder:"Your Description", class:"materialize-textarea" %>
       <%= f.hidden_field :activated, value: true %>
-      
       <%= f.submit "Complete Profile", class:"btn-large amber" %>
     <% end %>
   </div>

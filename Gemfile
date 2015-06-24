@@ -26,6 +26,7 @@ gem "omniauth-github"
 gem 'bcrypt', '~> 3.1.7'
 gem 'materialize-sass'
 gem "selenium-webdriver"
+gem 'json'
 
 group :development, :test do
   gem "better_errors"
