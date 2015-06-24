@@ -6,7 +6,5 @@ class Match < ActiveRecord::Base
   scope :reject, -> { where(status: 1) }
   scope :matched, -> { where(status: 3) }
   # scope :liked, -> {where(person_b: current_user)}
-
-  
 end
 

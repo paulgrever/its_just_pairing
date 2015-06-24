@@ -2593,6 +2593,14 @@ class Seed
                    status: status.sample,
                    user_id: min_user)
     end
+    Match.create(person_a: 13, 
+                 person_b: 83,
+                 status: 2, 
+                 user_id: 13)
+    Match.create(person_a: 45, 
+                 person_b: 83,
+                 status: 2, 
+                 user_id: 45)
   end
 end
 

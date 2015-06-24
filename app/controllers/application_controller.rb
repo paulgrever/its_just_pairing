@@ -9,8 +9,6 @@ class ApplicationController < ActionController::Base
   helper_method :change_up, :pending_matches, :list_of_likes
   attr_reader :liked
 
-
-
   def change_up
     @liked ||= Match.pending.where(person_b: current_user)
     if @liked.count > 0
@@ -31,8 +29,6 @@ class ApplicationController < ActionController::Base
   def pending_matches
     Match.pending.where(person_b: current_user).count > 0
   end
-
-
 
 private
 
