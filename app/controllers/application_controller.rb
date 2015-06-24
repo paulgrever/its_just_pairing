@@ -13,7 +13,11 @@ class ApplicationController < ActionController::Base
     if @liked.count > 0
       @liked.first.person_a.to_i
     else
-      session[:next_match] ||= current_user.next_match 
+      if session[:next_match] > current_user.next_match 
+        session[:next_match]
+      else
+        session[:next_match] = current_user.next_match 
+      end
     end
   end
 

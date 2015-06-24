@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
     req = request.env["omniauth.auth"]
     @user = User.find_or_create_by_auth(req)
     session[:user_id] = @user.id
-    binding.pry
     session[:next_match] = @user.next_match
     if @user.activated?
       redirect_to dashboard_path

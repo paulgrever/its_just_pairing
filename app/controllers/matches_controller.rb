@@ -1,12 +1,7 @@
 class MatchesController < ApplicationController
   def index
     @user = current_user
-    # @matches = Match.where(status: 2)
-    #                           .where.not(user_id: current_user.id)
-    #                           .where('person_a = ? OR person_b =?', current_user.id, current_user.id
     @matches = Match.where(status: 2).where(person_b: current_user.id)
-    @pot = Match.pending.exluding_me
-
   end
 
   def create
