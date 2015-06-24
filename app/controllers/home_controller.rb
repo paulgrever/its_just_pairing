@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  skip_before_filter :require_login
+  skip_before_filter :require_login, except: [:dashboard]
   def index
   end
 
