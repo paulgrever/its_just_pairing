@@ -11,7 +11,7 @@ class HomeController < ApplicationController
   private
 
   def match_locater
-    @matches.map do |match| 
+    @matches.map do |match|
       if current_user == match.user
         User.find(match.person_b.to_i)
       else

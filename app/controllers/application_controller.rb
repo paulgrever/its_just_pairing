@@ -22,15 +22,13 @@ class ApplicationController < ActionController::Base
     Match.pending.where(person_b: current_user)
   end
 
-
-
 private
 
   def upcoming_match
-    if session[:next_match] > current_user.next_match 
+    if session[:next_match] > current_user.next_match
       session[:next_match]
     else
-      session[:next_match] = current_user.next_match 
+      session[:next_match] = current_user.next_match
     end
   end
 

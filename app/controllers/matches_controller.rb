@@ -1,8 +1,4 @@
 class MatchesController < ApplicationController
-  def index
-    @user = current_user
-    @matches = Match.where(status: 2).where(person_b: current_user.id)
-  end
 
   def create
     if pending_matches
@@ -15,8 +11,8 @@ class MatchesController < ApplicationController
         @match.update(status: params[:status])
       end
     else
-      @match = current_user.matches.create(person_a: current_user.id, 
-                                         person_b: params[:pair_id].to_i, 
+      @match = current_user.matches.create(person_a: current_user.id,
+                                         person_b: params[:pair_id].to_i,
                                          status: params[:status])
       session[:next_match] += 1
     end
@@ -24,7 +20,7 @@ class MatchesController < ApplicationController
   end
 
   private
-  
+
   def pending_matches
     Match.pending.where(person_b: current_user).count > 0
   end
