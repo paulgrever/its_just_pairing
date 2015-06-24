@@ -17,6 +17,14 @@ module MatchesHelper
     end
   end
 
+  def dont_match_with_matches
+    matches = Match.matched.where(person_b: current_user.id).pluck(:person_a)
+    if matches.include?(session[:next_match].to_i)
+      session[:next_match] += 1
+    end
+  end
+
+
   def dont_match_with_rejects
     rejects = Match.reject.where(person_b: current_user.id).pluck(:person_a)
     if rejects.include?(session[:next_match].to_i)

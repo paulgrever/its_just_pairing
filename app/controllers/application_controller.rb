@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
     else
       dont_match_with_yourself
       dont_match_with_rejects
+      dont_match_with_matches
       upcoming_match
     end
   end
