@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_filter :require_login
+  skip_before_filter :require_login, :out_of_matches
   def create
     req = request.env["omniauth.auth"]
     @user = User.find_or_create_by_auth(req)

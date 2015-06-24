@@ -1,5 +1,8 @@
 class MatchesController < ApplicationController
-
+  skip_before_filter :out_of_matches
+  
+  def index
+  end
   def create
     if pending_matches
       @match = list_of_likes.first

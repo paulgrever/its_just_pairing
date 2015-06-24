@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "/dashboard", to: "home#dashboard"
   resources :home, only: [:index]
   resources :users, only: [:edit, :update, :show]
-  resources :matches, only: [:create]
+  resources :matches, only: [:index, :create]
   # session
   get "/auth/github/callback", to: "sessions#create"
   get "/auth/failure", to: "sessions#failure"

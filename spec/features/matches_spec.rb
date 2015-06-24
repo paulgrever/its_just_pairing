@@ -28,6 +28,7 @@ RSpec.describe "Matches", type: :feature do
   end
 
   it "can see potential matches" do
+
     expect(page).to have_content("testuser")
     expect(page).to have_content("This is the description")
   end
@@ -71,18 +72,12 @@ RSpec.describe "Matches", type: :feature do
     expect(page).to_not have_content("testuser2")
   end
 
-  # it "won't see previously rejected matches" do
-  #   Match.create(person_a: @user2.id,
-  #                person_b: User.last.id,
-  #                status: 2,
-  #                user_id: @user2.id)
-  #   visit dashboard_path
-  #   click_link_or_button("Find Pairs")
-  #   expect(page).to have_content("testuser2")
-  #   click_link_or_button("Reject")
-  #   visit dashboard_path
-  #   click_link_or_button("Find Pairs")
-  #   save_and_open_page
-  #   expect(page).to have_content("testuser2")
-  # end
+  it "won't see match with itself" do
+    expect(page).to have_content("testuser")
+    click_link_or_button("Approve")
+    expect(page).to have_content("testuser2")
+    click_link_or_button("Approve")
+    expect(current_path).to eq(matches_path)
+    expect(page).to have_content("Sorry there are no more potential matches at this time.")
+  end
 end
