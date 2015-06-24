@@ -20,7 +20,7 @@
           </div>
           <div class="card-content">
             <p><%= user.description %></p>
-            <p><strong>Skills: </strong><%=  user.languages.pluck(:name).to_sentence %></p>
+            <p><strong>Skills: </strong><%= user.languages.pluck(:name).to_sentence %></p>
           </div>
           <div class="card-action">
             <a href=<%= user.html_url %>>GitHub</a>

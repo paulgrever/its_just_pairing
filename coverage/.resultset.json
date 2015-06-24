@@ -432,7 +432,6 @@
         1,
         null,
         null,
-        null,
         null
       ],
       "/Users/paulgrever/Documents/rails_lessons/projects/its_just_pairing/spec/features/user_spec.rb": [
@@ -563,7 +562,6 @@
         21,
         35,
         null,
-        null,
         null
       ],
       "/Users/paulgrever/Documents/rails_lessons/projects/its_just_pairing/spec/models/user_spec.rb": [
@@ -591,7 +589,6 @@
         1,
         1,
         1,
-        null,
         null,
         null
       ],
@@ -768,6 +765,6 @@
         null
       ]
     },
-    "timestamp": 1435168379
+    "timestamp": 1435168659
   }
 }

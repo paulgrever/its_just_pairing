@@ -12,16 +12,16 @@
           <div class="card-content">
             <p><%= @user.description %></p>
             
-            <p><strong>Skills: </strong><%=  @user.languages.pluck(:name).to_sentence %>
+            <p><strong>Skills: </strong><%= @user.languages.pluck(:name).to_sentence %>
             </p>
           </div>
           <div class="card-action">
             <div class="row">
-              <div class="col sm4"> 
-                <%= button_to("Reject", matches_path(pair_id: @user.id, status: "Reject"), class:" btn  btn-large red darken-1"  ) %>
+              <div class="col sm4">
+                <%= button_to("Reject", matches_path(pair_id: @user.id, status: "Reject"), class:" btn btn-large red darken-1" ) %>
               </div>
               <div class="col sm4 offset-s5 grid-example right-align ">
-                <%= button_to("Approve", matches_path(pair_id: @user.id, status: "Pending"), class:" btn btn-large green lighten-2"  ) %>
+                <%= button_to("Approve", matches_path(pair_id: @user.id, status: "Pending"), class:" btn btn-large green lighten-2" ) %>
               </div>
             </div>
           </div>
