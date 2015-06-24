@@ -4,6 +4,29 @@
   </div>
 
   <div class="row center-align">
-    <%= link_to("Find Pairs", user_path(current_user.next_match), class: "waves-effect waves-light btn btn-large") %>
+    <%= link_to("Find Pairs", user_path(change_up), class: "waves-effect waves-light btn btn-large") %>
+  </div>
+  </div>
+<div class="container center-align">
+  <h3>Your Matches:</h3>
+  <div class="row">
+      <% @users.each do |user| %>
+      <div class="col md3 card card-medium">
+
+        <div class="card-image">
+          <img src=<%=user.avatar_url  %>>
+          <span class="card-title"><%=user.login %></span>
+        </div>
+        <div class="card-content">
+          <p><%= user.description %></p>
+          <p><strong>Skills: </strong><%=  user.languages.pluck(:name).to_sentence %></p>
+        </div>
+        <div class="card-action">
+          <a href=<%= user.html_url %>>GitHub</a>
+        </div>
+
+      </div>
+      <% end %>
+    
   </div>
 </div>

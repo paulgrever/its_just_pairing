@@ -3,6 +3,7 @@ class Seed
     languages
     users
     userlanguages
+    matches
   end
 
   USERS = T = [
@@ -2579,6 +2580,18 @@ class Seed
       @user = User.find(rand(1..all_users))
       @language = Language.find(rand(1..all_langs))
       @user.languages << @language
+    end
+  end
+
+  def matches
+    range = User.count - 1
+    status = %w(Reject Pending Match)
+    25.times do 
+      min_user = rand(1..range)
+      Match.create(person_a: min_user,
+                   person_b: min_user + 1,
+                   status: status.sample,
+                   user_id: min_user)
     end
   end
 end

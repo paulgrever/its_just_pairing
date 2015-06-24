@@ -14,7 +14,6 @@ class SessionsController < ApplicationController
   def destroy
     @user = User.find(current_user.id)
     @user.update(next_match: session[:next_match])
-    session[:next_match] = nil
     session[:user_id] = nil
     redirect_to root_path
   end
