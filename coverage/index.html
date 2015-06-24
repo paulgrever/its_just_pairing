@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-06-24T11:12:26-06:00">2015-06-24T11:12:26-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-06-24T11:27:12-06:00">2015-06-24T11:27:12-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>36</b> files in total.
-    <b>349</b> relevant lines. 
-    <span class="green"><b>339</b> lines covered</span> and
+    <b>348</b> relevant lines. 
+    <span class="green"><b>338</b> lines covered</span> and
     <span class="red"><b>10</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -52,12 +52,12 @@
       
       <tr>
         <td class="strong"><a href="#06441f77495ecd09c6e58a7ec5e3ce50cadc40ad" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
-        <td class="green strong">94.74 %</td>
-        <td>29</td>
-        <td>19</td>
+        <td class="green strong">94.44 %</td>
+        <td>28</td>
         <td>18</td>
+        <td>17</td>
         <td>1</td>
-        <td>9.1</td>
+        <td>9.5</td>
       </tr>
       
       <tr>
@@ -429,10 +429,10 @@
         <div class="source_table" id="06441f77495ecd09c6e58a7ec5e3ce50cadc40ad">
   <div class="header">
     <h3>app/controllers/application_controller.rb</h3>
-    <h4><span class="green">94.74 %</span> covered</h4>
+    <h4><span class="green">94.44 %</span> covered</h4>
     <div>
-      <b>19</b> relevant lines. 
-      <span class="green"><b>18</b> lines covered</span> and
+      <b>18</b> relevant lines. 
+      <span class="green"><b>17</b> lines covered</span> and
       <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
@@ -494,121 +494,115 @@
           <code class="ruby">  helper_method :next_potential_match, :pending_matches, :list_of_likes</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  attr_reader :liked</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
           <code class="ruby">  def next_potential_match</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="13">
+        <li class="covered" data-hits="22" data-linenumber="12">
           <span class="hits">22</span>
           
           <code class="ruby">    @liked ||= list_of_likes</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="14">
+        <li class="covered" data-hits="22" data-linenumber="13">
           <span class="hits">22</span>
           
           <code class="ruby">    if @liked.count &gt; 0</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="15">
+        <li class="covered" data-hits="2" data-linenumber="14">
           <span class="hits">2</span>
           
           <code class="ruby">      @liked.first.person_a.to_i</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="20" data-linenumber="17">
+        <li class="covered" data-hits="20" data-linenumber="16">
           <span class="hits">20</span>
           
           <code class="ruby">      dont_match_with_yourself</code>
         </li>
       
-        <li class="covered" data-hits="20" data-linenumber="18">
+        <li class="covered" data-hits="20" data-linenumber="17">
           <span class="hits">20</span>
           
           <code class="ruby">      dont_match_with_rejects</code>
         </li>
       
-        <li class="covered" data-hits="20" data-linenumber="19">
+        <li class="covered" data-hits="20" data-linenumber="18">
           <span class="hits">20</span>
           
           <code class="ruby">      upcoming_match</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
+        <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
           <code class="ruby">private</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
           <code class="ruby">  def require_login</code>
         </li>
       
-        <li class="covered" data-hits="55" data-linenumber="25">
+        <li class="covered" data-hits="55" data-linenumber="24">
           <span class="hits">55</span>
           
           <code class="ruby">    unless current_user</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="26">
+        <li class="missed" data-hits="0" data-linenumber="25">
           
           
           <code class="ruby">      redirect_to home_index_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="28">
           
           
           <code class="ruby">end</code>
